@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+  <head>
+    <meta charset="utf-8">
+    <title>Assignment 3</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ <style>
+    /*
+      Code copied from: https://www.w3schools.com/howto/howto_js_image_grid.asp
+      Code copied from: https://www.w3schools.com/howto/howto_js_topnav.asp
+      Code copied from: https://www.w3schools.com/howto/howto_css_topnav_split.asp
+      Code copied from: https://www.w3schools.com/css/css_website_layout.asp
+			Author: w3schools.com
+			Name: Image Grid
+      Name: Top Navigation
+      Name: Split Navigation
+      Name: CSS Website Layout
+			Description: Displays images in a grid.
+      Description: Displays a top navigation bar.
+      Description: Displays a split top navigation bar.
+      Description: Displays a website layout.
+			dec. 5, 2023
+      */
+      
+      /* Copied Code Starts */
+      * {
+        box-sizing: border-box;
+      }
+   
+      body {
+        font-family: "A Day Without Sun Text";
+        margin: 0;
+      }
+
+      .header {
+        font-size: 200%;
+        background-color: white;
+        padding: 10px;
+        text-align: center;
+        color: #01062e;
+      }
+  
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #01062e;
+        font-size: 25px;
+      }
+
+      li {
+        float: left;
+      }
+
+      li a,
+      .dropbtn {
+        display: inline-block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      li.dropdown {
+        display: inline-block;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+      }
+
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+
+      li a:hover,
+      .dropdown:hover .dropbtn {
+        background-color: #3f3848;
+      }
+
+      .dropdown-content a:hover {
+        background-color: #3f3848;
+        color: white;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .topnav a.split {
+        text-decoration: none;
+        padding: 14px 16px;
+        font-size: 25px;
+        float: right;
+        background-color: #01062e;
+        color: white;
+      }
+
+      .topnav a.split:hover {
+        background-color: #3f3848;
+        color: white;
+      }
+
+      .row {
+        display: -ms-flexbox;
+
+        display: flex;
+        -ms-flex-wrap: wrap;
+
+        flex-wrap: wrap;
+        padding: 0 4px;
+      }
+
+
+      .column {
+        -ms-flex: 50%;
+
+        flex: 50%;
+        padding: 0 4px;
+      }
+
+      .column img {
+        margin-top: 8px;
+        vertical-align: middle;
+      }
+
+      .btn {
+        border: none;
+        outline: none;
+        padding: 10px 16px;
+        background-color: #f1f1f1;
+        cursor: pointer;
+        font-size: 18px;
+      }
+
+      .btn:hover {
+        background-color: #ddd;
+      }
+
+      .btn.active {
+        background-color: #666;
+        color: white;
+      }
+     /* Copied Code Ends*/
+    </style>
+  </head>
+  <body>
+    <!-- Copied Code Starts -->
+    
+    <div class="header">
+      <h1>Fan Art</h1>
+    </div>
+
+    <ul>
+      <li><a href="https://selabbar.github.io/Page-Home/">Home</a></li>
+      <li class="dropdown">
+        <a href="https://selabbar.github.io/Books-page/" class="dropbtn">Books</a>
+        <div class="dropdown-content">
+          <a href="https://selabbar.github.io/Genres-page/">Genres</a>
+        </div>
+      </li>
+      <li><a href="https://selabbar.github.io/fanart-page/">Fan Art</a></li>
+
+      <div class="topnav">
+        <a href="https://selabbar.github.io/Assignment-3/" class="split">About</a>
+      </div>
+    </ul>
+    <div class="row">
+      <div class="column">
+        <img src="1.jpg" alt="book" style="width:100%">
+        <img src="2.jpg" alt="book" style="width:100%">
+        <img src="3.jpg" alt="book" style="width:100%">
+        <img src="4.jpg" alt="book" style="width:100%">
+        <img src="5.jpg" alt="book" style="width:100%">
+        <img src="6.jpg" alt="book" style="width:100%">
+        <img src="7.jpg" alt="book" style="width:100%">
+        <img src="14.jpg" alt="book" style="width:100%">
+      </div>
+      <div class="column">
+        <img src="8.jpg" alt="book" style="width:100%">
+        <img src="9.jpg" alt="book" style="width:100%">
+        <img src="10.jpg" alt="book" style="width:100%">
+        <img src="11.jpg" alt="book" style="width:100%">
+        <img src="12.jpg" alt="book" style="width:100%">
+        <img src="13.jpg" alt="book" style="width:100%">
+        <img src="15.jpg" alt="book" style="width:100%">
+        <img src="16.jpg" alt="book" style="width:100%">
+        <img src="17.jpg" alt="book" style="width:100%">
+      </div>
+    </div>
+    <script>
+      let elements = document.getElementsByClassName("column");
+      let i;
+
+      function two() {
+        for (i = 0; i < elements.length; i++) {
+          elements[i].style.msFlex = "50%"; 
+          elements[i].style.flex = "50%";
+        }
+      }
+      two();
+    </script>
+ <!-- Copied Code Ends -->
+  </body>
+</html>
